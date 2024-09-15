@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import {
   Navbar,
   LandingArea,
@@ -16,7 +16,7 @@ import {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="relative z-0 bg-primary">
         <div className="bg-LandingArea-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
@@ -35,7 +35,7 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
