@@ -28,9 +28,9 @@ import {
   ecpl,
   cyber,
   iit,
-  Abhinav,
-  Amrit,
-  Shashwat
+  abhinav,
+  amrit,
+  shashwat
 } from "../assets";
 
 export const navLinks = [
@@ -272,7 +272,7 @@ const testimonials = [
     name: "Abhinav Trivedi",
     designation: "SDE",
     company: "C3i Hub",
-    image: Abhinav,
+    image: abhinav,
   },
   {
     testimonial:
@@ -280,7 +280,7 @@ const testimonials = [
     name: "Amrit Shukla",
     designation: "SDE",
     company: "NRI Fintech",
-    image: Amrit,
+    image: amrit,
   },
   {
     testimonial:
@@ -288,7 +288,7 @@ const testimonials = [
     name: "Shashwat Shrivastav",
     designation: "SDE",
     company: "KeySight Technologoies",
-    image: Shashwat,
+    image: shashwat,
   },
 ];
 

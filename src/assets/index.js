@@ -36,9 +36,9 @@ import ecpl from "./internship/ecpl.png";
 import cyber from "./internship/cyber.png";
 import iit from "./internship/iit.png";
 
-import Abhinav from "./Testimonials/Abhinav.png";
-import Amrit from "./Testimonials/Amrit.png";
-import Shashwat from "./Testimonials/Shashwat.png";
+import abhinav from "./Testimonials/abhinav.png";
+import amrit from "./Testimonials/amrit.png";
+import shashwat from "./Testimonials/shashwat.png";
 
 export {
   logo,
@@ -74,7 +74,7 @@ export {
   ecpl,
   cyber,
   iit,
-  Abhinav,
-  Amrit,
-  Shashwat,
+  abhinav,
+  amrit,
+  shashwat,
 };
