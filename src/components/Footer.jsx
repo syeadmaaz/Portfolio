@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 import { FaGithub, FaLinkedin, FaGoogle } from "react-icons/fa";
 
 const Footer = () => {
