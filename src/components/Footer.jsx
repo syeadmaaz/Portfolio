@@ -15,8 +15,8 @@ const Footer = () => {
             Thank you for taking the time to explore my portfolio! I hope you
             enjoyed the journey through my work as much as I enjoyed crafting
             it. If something here resonated with you, sparked an idea, or opened
-            up a potential opportunity, I’d love to hear from you. Please don’t
-            hesitate to reach out, I’d be excited to connect and explore
+            up a potential opportunity, I'd love to hear from you. Please don't
+            hesitate to reach out, I'd be excited to connect and explore
             possibilities together.
           </p>
         </div>
