@@ -28,15 +28,25 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        variants={textVariant()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.div className="relative flex flex-col-reverse md:flex-row items-center justify-between md:items-start mt-4 gap-4">
+      <motion.div
+        className="relative flex flex-col-reverse md:flex-row items-center justify-between md:items-start mt-4 gap-4"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         <motion.p
           className="text-secondary text-[17px] text-justify max-w-3xl leading-[30px] md:mr-10 md:w-[70%] md:pr-8"
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("right", "", 0.1, 1)}
         >
           I am a versatile Software Developer at Boston Scientific, where my
           primary focus over the last few months has been SQL database
@@ -57,7 +67,7 @@ const About = () => {
           src={logo}
           alt="logo"
           className="w-64 h-54 object-contain rounded-[10%]"
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("left", "", 0.1, 1)}
         />
       </motion.div>
 

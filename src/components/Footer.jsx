@@ -19,7 +19,7 @@ const Footer = () => {
             variants={fadeIn("right")}
             className="flex-[0.75] bg-black-200 p-8 rounded-2xl"
           >
-            <p className="text-white tracking-wider font-medium text-[16px] mb-4">
+            <p className="text-white tracking-wider text-left font-medium text-[16px] mb-4">
               Thank you for taking the time to explore my portfolio! I hope you
               enjoyed the journey through my work as much as I enjoyed crafting
               it. If something here resonated with you, sparked an idea, or
