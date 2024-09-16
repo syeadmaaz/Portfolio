@@ -42,7 +42,7 @@ const About = () => {
         className="relative flex flex-col-reverse md:flex-row items-center justify-between md:items-start mt-4 gap-4"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <motion.p
           className="text-secondary text-[17px] text-justify max-w-3xl leading-[30px] md:mr-10 md:w-[70%] md:pr-8"

@@ -1,12 +1,13 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const formRef = useRef();
@@ -17,11 +18,9 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setForm({
       ...form,
       [name]: value,
@@ -55,17 +54,14 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-   
+
     const validationError = validateForm();
 
     if (validationError) {
-      setError(validationError);
-      alert(validationError);
       setLoading(false);
+      toast.error(validationError);
       return;
     }
-
-    setError(""); // Clear any previous error
 
     emailjs
       .send(
@@ -73,9 +69,7 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          // to_name: "Syead Maaz Ahmed",
           from_email: form.email,
-          // to_email: "syeadmaazahmed@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -83,7 +77,9 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          toast.success(
+            "Thank you. I will get back to you as soon as possible."
+          ); // Replace alert with toast
 
           setForm({
             name: "",
@@ -93,7 +89,7 @@ const Contact = () => {
         },
         (error) => {
           console.error("Error:", error);
-          alert("Ahh, something went wrong. Please try again.");
+          toast.error("Ahh, something went wrong. Please try again."); // Replace alert with toast
           setLoading(false);
         }
       );
@@ -118,7 +114,6 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              // required
               value={form.name}
               onChange={handleChange}
               placeholder="What's your good name?"
@@ -130,7 +125,6 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              // required
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email address?"
@@ -142,23 +136,22 @@ const Contact = () => {
             <textarea
               rows={7}
               name="message"
-              // required
               value={form.message}
               onChange={handleChange}
               placeholder="What do you want to say?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
-
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary cursor-pointer"
+            disabled={loading}
           >
             {loading ? "Sending..." : "Send"}
           </button>
+          <ToastContainer position="bottom-right" />{" "}
         </form>
       </motion.div>
-
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
